@@ -65,7 +65,7 @@ describe Api::V1::UsersController do
 				expect(user_response[:email]).to eql "newemail@bar.com"
 			end
 			
-			it { should respond_with 200 }
+			it { should respond_with 201 }
 	  end
 		
 		context 'when is not created' do

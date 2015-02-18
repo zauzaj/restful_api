@@ -17,14 +17,7 @@ describe 'User' do
 	it { should validate_confirmation_of(:password) }
 	it { should allow_value('example@domain.com').for(:email) }
 	it { should validate_uniqueness_of(:auth_token)}
-	
-	describe 'when email is not present' do
-	  before { @user.email = " " }
-		it { should_not be_valid }
-	end
-	
-	require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
-	
+		
 	describe "#generate_authentication token" do
 		it 'generates a unique token' do
 		  Devise.stub(:friendly_token).and_return("auniquetoken123")
