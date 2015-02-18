@@ -33,4 +33,12 @@ describe Api::V1::SessionsController do
 			it { should respond_with 422 }
 		end
 	end
+	describe 'DELETE #desrtoy' do
+	  before(:each) do
+	    @user = FactoryGirl.create :user
+			sign_in @user, store: false
+			delete :destroy
+	  end
+		it { should respond_with 204 }
+	end
 end
